@@ -626,6 +626,8 @@
 		.image img {
 			border-radius: 4px;
 			display: block;
+			height: auto;
+			width: auto;
 		}
 
 		.image.left, .image.right {
@@ -944,9 +946,6 @@
 				border-top: 0;
 			}
 
-			.image_extrait{
-				height: 25rem;
-			}
 
 /* Button */
 
@@ -1608,8 +1607,19 @@
 			text-decoration-color: #ffffff;
 		}
 
-/* Bootstrap */
+.row_article{
+	height: 33%;
+}
 
+table thead{
+	height: 60%;
+}
+
+table tbody tr .image_extrait{
+	height: 100%;
+}
+
+/* Bootstrap */
 .row {
 	margin-right: -15px;
 	margin-left: -15px;

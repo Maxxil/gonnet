@@ -1,0 +1,191 @@
+/*///////////////////// Elementaire/////////////////////*/
+
+a,a:hover,a:visited{text-decoration: none;color: inherit;outline: none;}
+/*///////////////////// Elementaire /////////////////////*/
+
+/*///////////////////// Générales /////////////////////*/
+.absolute-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: relative;
+}
+.width100{
+	width:100%;
+}
+.height100{
+	height:100%;
+}
+.top10{
+    top: 10%!important;
+}
+.voile{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*///////////////////// Générales /////////////////////*/
+
+/*///////////////////// Header /////////////////////*/
+#title-wrapper {
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top: 150px;
+    color: #FFF;
+    z-index: 1000;
+}
+#confirme-wrapper {
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top: 210px;
+    color: #FFF;
+    z-index: 1000;
+}
+.title{
+    font-weight: 100;
+    font-size: 3.5em;
+}
+.subtitle{
+    font-weight: 300;
+    font-size: 2em;
+}
+.card-content{
+    color: #333;
+}
+.card-image{
+    width: 21%;
+}
+/*///////////////////// Header /////////////////////*/
+
+@media screen and (min-width: 1652px) {
+	body,html{
+	  font-size: 14pt;
+	  overflow: hidden;
+	}
+	#bgvideo{
+		width: 100%; 
+	}
+	#title-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 150px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	#confirme-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 210px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	.title{
+		font-weight: 100;
+		font-size: 3.5em;
+	}
+	.subtitle{
+		font-weight: 300;
+		font-size: 2em;
+	}
+}
+@media screen and (max-width: 1651px) {
+	body,html{
+	  font-size: 14pt;
+	  overflow: hidden;
+	}
+	#bgvideo{
+		width: 160%;
+	}
+	#title-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 150px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	#confirme-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 210px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	.title{
+		font-weight: 100;
+		font-size: 2.5em;
+	}
+	.subtitle{
+		font-weight: 300;
+		font-size: 1.5em;
+	}
+}
+@media screen and (max-width: 784px) {
+	body,html{
+	  font-size: 10pt;
+	  overflow: auto;
+	}
+	#bgvideo{
+		width: 250%;
+	}
+	#title-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 20px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	#confirme-wrapper {
+		position: absolute;
+		margin: 0 auto;
+		text-align: center;
+		right: 0;
+		left: 0;
+		top: 90px;
+		color: #FFF;
+		z-index: 1000;
+	}
+	.title{
+		font-weight: 100;
+		font-size: 2.5em;
+	}
+	.subtitle{
+		font-weight: 300;
+		font-size: 1.5em;
+	}
+	.card-image{
+		width: 33%;
+	}
+}
