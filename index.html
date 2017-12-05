@@ -20,9 +20,13 @@
 		<!-- Basics -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/image_overlay.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106532354-1"></script>
+		<link rel="stylesheet" href="assets/css/modal.css">
+		<link rel="stylesheet" href="assets/css/nav-bar.css">
+		<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 		<script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments)};
@@ -36,7 +40,7 @@
 	</head>
 	<body>
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" ng-app="gonnetApp">
 
 				<!-- Header -->
 				<header id="header">
@@ -99,7 +103,7 @@
 					<!-- Contact -->
 					<article id="contact">
 						<h2 class="major">Contact</h2>
-						<div ng-app="gonnetApp" ng-controller="MailController">
+						<div  ng-controller="MailController">
 							<form method="post" action="#">
 								<div class="field half first">
 									<label for="name">Nom</label>
@@ -124,38 +128,23 @@
 					</article>
 
 					<!-- Articles -->
-					<article id="article">
+					<article id="article" ng-controller="ArticleController" ng-init="displayFirstSectionArticle()">
 
-						<!--<section>
+						<header class="article-nav-bar">
+							<nav>
+								<ul>
+									<li><a href="#article" ng-click="displayFirstSectionArticle()">Mes articles</a></li>
+									<li><a href="#article" ng-click="displaySecondSectionArticle()">Mes contributions</a></li>
+								</ul>
+							</nav>
+						</header>
+
+						<section id="sectionMyProjects">
+							<h2 class="major">Mes contributions</h2>
+						</section>
+						<section id="sectionMyArticles">
 							<h2 class="major">Mes articles</h2>
-							<div class="card">
-								<img class="card-img-top" src="#"/>
-								<div class="card-block">
-									<h4 class="card-title">Card title</h4>
-									<p class="card-text">Mon texte</p>
-
-								</div>
-							</div>
-						</section>-->
-						<section>
-							<h2 class="major">Mes projets</h2>
 							<div class="row col-xs-12">
-								<div class="col-xs-6">
-									<table>
-										<thead>
-											<tr>
-												<th><a href="http://kng-esport.com/soiree-ephemere-kng2017/">Soirée Ephèmere PrismEsport</a></th>
-											</tr>
-										</thead>
-										<tbody>
-										<tr class="image_extrait"><td><a href="http://kng-esport.com/soiree-ephemere-kng2017/"><span class="image main"><img src="http://kng-esport.com/wp-content/uploads/2017/04/TJP4641-2048x1024.jpg"/></span></a> </td></tr>
-											<tr><td>
-												<p>Retours sur la soirée éphémère & concept show #KNG2017<br>
-												Nous avons organisé notre propre événement autour de l’esport et de l’entrepreneuriat en partenariat avec Prism esport et MCarré.</p>
-											</td></tr>
-										</tbody>
-									</table>
-								</div>
 								<div class="col-xs-6">
 									<table>
 										<thead>
@@ -169,6 +158,27 @@
 										<tr class="image_extrait"><td><a href="https://lyon.ynov.com/news/success-story-anthony-gonnet-m2-isee-ynov/"><span class="image main"><img src="https://lyon.ynov.com/wp-content/uploads/sites/24/2017/04/succes-story-1.jpg"/></span></a> </td></tr>
 											<tr><td>Pour initier cette série de Success Story, nous démarrons avec Anthony, 23 ans, étudiant en 5ème année (M2) à Lyon Ynov Campus en ISEE (école de commerce management).<br>
 												Lorsqu’il n’est pas en entreprise, c’est dans les couloirs du campus qu’on le croise et même aux heures les plus tardives…</td></tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-xs-6">
+									<table>
+										<thead>
+										<tr>
+											<th>
+												<a href="https://www.linkedin.com/pulse/incubateur-%C3%A9vents-anthony-gonnet">
+													Création de mon incubateur
+												</a>
+											</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr class="image_extrait"><td>
+											<a href="https://www.linkedin.com/pulse/incubateur-%C3%A9vents-anthony-gonnet">
+												<span class="image main"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAlbAAAAJDVjYzI0OGY5LWU2ZjgtNDQzYS05ZmQ4LTQ1YzI4NTg1Y2U4Nw.jpg"/></span> </a></td></tr>
+										</a>
+										<tr><td>Nous y sommes ! Après des mois de travail nous vous présentons "l'Incubateurs Events"<br>
+											Avec un seul but, réaliser des événements d'ampleurs telles que des rencontres d'Esport, une course de drone, un nouveau type d'escape game et pour finir un capture the flag (sécurité informatique).</td></tr>
 										</tbody>
 									</table>
 								</div>
@@ -213,43 +223,75 @@
 								</div>
 							</div>
 							<div class="row col-xs-12">
-								<div class="col-xs-6">
-									<table>
-										<thead>
-										<tr>
-											<th>
-												<a href="https://www.linkedin.com/pulse/incubateur-%C3%A9vents-anthony-gonnet">
-													Création de mon incubateur
-												</a>
-											</th>
-										</tr>
-										</thead>
-										<tbody>
-											<tr class="image_extrait"><td>
-												<a href="https://www.linkedin.com/pulse/incubateur-%C3%A9vents-anthony-gonnet">
-													<span class="image main"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAlbAAAAJDVjYzI0OGY5LWU2ZjgtNDQzYS05ZmQ4LTQ1YzI4NTg1Y2U4Nw.jpg"/></span> </a></td></tr>
-												</a>
-											<tr><td>Nous y sommes ! Après des mois de travail nous vous présentons "l'Incubateurs Events"<br>
-												Avec un seul but, réaliser des événements d'ampleurs telles que des rencontres d'Esport, une course de drone, un nouveau type d'escape game et pour finir un capture the flag (sécurité informatique).</td></tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="col-xs-6">
-									<table>
 
-									</table>
-								</div>
 
 							</div>
 						</section>
 					</article>
 
 					<!-- Artistes -->
-					<article id="artistes">
-						<h2>Les artistes</h2>
-						<p>Cette page est en cours de rédaction.<br>
-							Revenez bientôt ou suivez nous sur les réseaux pour vous tenir informé!
-						</p>
+					<article id="artistes"  ng-controller="ArtisteController" ng-init="getArtistesInformation()">
+						<h2 class="major">Artistes</h2>
+						<div class="col-md-12" >
+							<div class="row">
+								<div ng-repeat="artiste in artistes">
+									<div class="col-md-4">
+										<div class="artiste-container" >
+											<a href="#artistes" ng-click="openModal(artiste.id)">
+												<img
+													class="artiste-image"
+													ng-src="{{artiste.image}}"
+													height="270" width="270"/>
+												<div class="artiste-info">
+													<div class="artiste-info-text">
+														<p><strong>{{artiste.firstname}} {{artiste.lastname}}</strong> </p>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div id="artiste{{artiste.id}}" class="modal">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h2>{{artiste.firstname}} {{artiste.lastname}} - {{artiste.chosenField}}</h2>
+													<span class="close" ng-click="closeModal(artiste.id)">&times;</span>
+												</div>
+												<div class="modal-body">
+													<img class="modal-image"
+														 ng-src="{{artiste.image}}"
+														 height="270" width="270"/>
+													<div class="modal-body-content">
+														<h4>Description: </h4>
+														<p>{{artiste.description}} </p>
+														<h4>Phrase fétiche: </h4>
+														<p><strong>{{artiste.fetishSentence}}</strong></p>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<ul class="icons">
+														<li ng-if="artiste.website"><a href="{{artiste.website}}" class="icon fa-safari"><span class="label">Site web</span></a>  </li>
+														<li ng-if="artiste.blog "><a href="{{artiste.blog}}" class="icon fa-..."><span class="label">Blog</span></a>  </li>
+														<li ng-if="artiste.facebook"><a href="{{artiste.facebook}}" class="icon fa-facebook"><span class="label">Facebook</span></a>  </li>
+														<li ng-if="artiste.linkedin"><a href="{{artiste.linkedin}}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+														<li ng-if="artiste.instagram"><a href="{{artiste.instagram}}" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+
+														<li ng-if="artiste.googlePlus"><a href="{{artiste.googlePlus}}" class="icon fa-google-plus"><span class="label">Google plus</span></a>  </li>
+														<li ng-if="artiste.youtube"><a href="{{artiste.youtube}}" class="icon fa-youtube"><span class="label">Youtube</span></a>  </li>
+														<li ng-if="artiste.dailymotion"><a href="{{artiste.dailymotion}}" class="icon fa-d....."><span class="label">Dailymotion</span></a>  </li>
+														<li ng-if="artiste.linkedin"><a href="{{artiste.linkedin}}" class="icon fa-linkedin"><span class="label">GitHub</span></a></li>
+
+														<li ng-if="artiste.twitch"><a href="{{artiste.twitch}}" class="icon fa-twitch"><span class="label">Twitch</span></a>  </li>
+														<li ng-if="artiste.viadeo"><a href="{{artiste.viadeo}}" class="icon fa-viadeo"><span class="label">Viadeo</span></a>  </li>
+														<li ng-if="artiste.tumblr"><a href="{{artiste.tumblr}}" class="icon fa-tumblr"><span class="label">Tumblr</span></a>  </li>
+														<li ng-if="artiste.pinterest"><a href="{{artiste.pinterest}}" class="icon fa-pinterest"><span class="label">Pinteres</span></a>  </li>
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</article>
 
 					<!-- Projets -->
@@ -294,7 +336,13 @@
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="js/angular/app.js"></script>
 		<script src="js/angular/service/mailService.js"></script>
+		<script src="js/angular/service/artisteService.js"></script>
+		<script src="js/angular/service/articleService.js"></script>
 		<script src="js/angular/controller/mailController.js"></script>
+		<script src="js/angular/controller/artisteController.js"></script>
+		<script src="js/angular/controller/articleController.js"></script>
+
+		<!-- Script modal -->
 
 		<!-- Script ReCaptcha -->
 		<script src="js/recaptcha.js"></script>
